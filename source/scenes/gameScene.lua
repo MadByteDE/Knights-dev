@@ -10,8 +10,11 @@ end
 
 
 function GameScene:draw()
-  local screenW, screenH = Game.screen:getDimensions()
-  Game.printf(_VERSION, 0, 0, screenW, "center", {.075, .075, .075, 1})
+  if DEBUG_MODE then
+    local screenW, screenH = Game.screen:getDimensions()
+    Game.printf(_VERSION, 0, 0, screenW, "center", {.075, .075, .075, 1})
+    Game.printf("FPS: "..love.timer.getFPS(), 0, 8, screenW, "center", {.075, .075, .075, 1})
+  end
 end
 
 
